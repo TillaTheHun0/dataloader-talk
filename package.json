@@ -1,0 +1,25 @@
+{
+  "name": "dataloader-slides",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npx nodemon src/index.js"
+  },
+  "author": "Tyler Hall",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.9.16",
+    "dataloader": "^2.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "graphql": "^14.6.0",
+    "node": "^13.6.0",
+    "ramda": "^0.26.1",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "standard": "^14.3.1"
+  }
+}
