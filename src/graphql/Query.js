@@ -10,7 +10,13 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Query: {
-    posts: async (_, args, { db }) => db.Post.findAll(),
-    post: async (_, { id }, { db }) => db.Post.findByPk(id)
+    posts: async (_, args, { db, dataloaders }) => {
+      const posts = await db.Post.findAll()
+
+      posts.forEach(post => dataloaders.postById.prime(post.id, post))
+
+      return posts
+    },
+    post: async (_, { id }, { db }) => ({ id })
   }
 }

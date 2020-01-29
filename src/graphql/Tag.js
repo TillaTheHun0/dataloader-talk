@@ -6,3 +6,12 @@ export const typeDefs = gql`
     text: String!
   }
 `
+
+export const resolvers = {
+  Tag: {
+    text: async ({ id }, args, { dataloaders }) => {
+      const { text } = await dataloaders.tagById.load(id)
+      return text
+    }
+  }
+}
