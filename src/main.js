@@ -5,6 +5,7 @@ import { mountApollo } from './apollo'
 
 import { schema } from './graphql'
 import { attachModelsToContext, initDb, seedDb } from './db'
+import { attachDataloadersToContext } from './dataloader'
 
 const PORT = 4000
 
@@ -14,7 +15,7 @@ async function start () {
 
   const server = mountApollo({
     schema,
-    contexters: [attachModelsToContext]
+    contexters: [attachModelsToContext, attachDataloadersToContext]
   })(express())
 
   server.listen(4000, () => {

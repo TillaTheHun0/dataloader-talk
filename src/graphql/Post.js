@@ -9,3 +9,12 @@ export const typeDefs = gql`
     tags: [Tag]!
   }
 `
+
+export const resolvers = {
+  Post: {
+    tags: async ({ id }, args, { dataloaders }) => {
+      console.log(`loading tags for Post with id ${id}`)
+      return dataloaders.tagByPostId.load(id)
+    }
+  }
+}
