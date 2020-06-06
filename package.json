@@ -9,7 +9,7 @@
   "author": "Tyler Hall",
   "license": "MIT",
   "dependencies": {
-    "apollo-server-express": "^2.9.16",
+    "apollo-server-express": "^2.14.2",
     "dataloader": "^2.0.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
