@@ -13,7 +13,7 @@ async function start () {
   await initDb()
   await seedDb()
 
-  const server = mountApollo({
+  const server = await mountApollo({
     schema,
     contexters: [attachModelsToContext, attachDataloadersToContext]
   })(express())
